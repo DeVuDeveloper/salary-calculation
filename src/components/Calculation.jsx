@@ -6,11 +6,16 @@ import Button from "./Button"
 
 const Calculation = () => {
   return (
-    <div>
-      <RadioButton />
-      <Selector />
-      <Input />
-      <Button />
+    <div class="p-10">
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="grid grid-cols-2 gap-4">
+          <RadioButton />
+          <Input />
+          <Selector />
+        </div>
+        
+        <Button />
+      </div>
     </div>
   )
 }
