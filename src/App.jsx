@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar"
 import Rightbar from "./components/Rightbar"
 import Home from "./pages/Home";
 import Salary from "./pages/Salary";
+import './app.css';
 
 import { Box, createTheme, Stack, ThemeProvider } from "@mui/material"
 import { useState } from "react"
