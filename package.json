@@ -9,6 +9,8 @@
   "dependencies": {
     "@babel/eslint-parser": "7.x",
     "@babel/plugin-syntax-jsx": "7.x",
+    "@mui/icons-material": "^5.10.16",
+    "@mui/material": "^5.10.16",
     "eslint-config-airbnb": "18.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
