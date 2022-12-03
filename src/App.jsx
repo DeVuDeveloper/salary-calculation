@@ -1,6 +1,7 @@
 import React from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Sidebar from "./components/Sidebar"
+import Rightbar from "./components/Rightbar"
 import Home from "./pages/Home";
 import Salary from "./pages/Salary";
 
@@ -27,7 +28,7 @@ function App() {
               <Route path="salary" element={<Salary />} />
             </Routes>
           </Router>
-         
+          <Rightbar />
         </Stack>
       </Box>
     </ThemeProvider>
