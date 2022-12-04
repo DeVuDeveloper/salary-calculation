@@ -22,7 +22,7 @@ const Sidebar = ({ mode, setMode }) => {
               <ListItemIcon>
                 <Home />
               </ListItemIcon>
-              <ListItemText primary="Homepage" />
+              <ListItemText primary="Home" />
             </ListItemButton>
 
           </ListItem>

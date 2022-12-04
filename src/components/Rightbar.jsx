@@ -61,7 +61,7 @@ const Rightbar = () => {
               <Avatar alt="salestrekker" src="https://www.helloworld.rs/public/files/_thumb/200x200/public/company/1442/2/Salestrekker.png" />
             </ListItemAvatar>
             <ListItemText
-              primary="Requirement2"
+              primary="Requirement 2"
               secondary={
                 <React.Fragment>
                   <Typography

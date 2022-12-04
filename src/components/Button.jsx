@@ -2,6 +2,7 @@ import React from "react"
 
 const Button = () => {
   return (
+    <div className="">
     <a href="#_" class="relative inline-flex items-center px-12 py-1 overflow-hidden text-lg font-medium text-slate-100 border-0 border-b-2 border-stone-600 rounded hover:text-white group hover:bg-gray-50">
     <span class="absolute left-0 block w-full h-0 transition-all bg-blue-400 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
     <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
@@ -9,6 +10,7 @@ const Button = () => {
     </span>
     <span class="relative">Calculate</span>
     </a>
+    </div>
   )
 }
-export default Button
+export default Button;
