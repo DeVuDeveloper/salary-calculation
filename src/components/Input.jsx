@@ -6,7 +6,7 @@ const Input = () => {
       <label
         for="salary"
         class="font-mono uppercase font-bold  text-[11px]  text-white
-    bg-stone-800 relative px-1  top-2 left-8 w-auto group-focus-within:text-blue-300 "
+    bg-neutral-900 relative px-1  top-2 left-8 w-auto group-focus-within:text-blue-300 "
       >
         Total Income
       </label>

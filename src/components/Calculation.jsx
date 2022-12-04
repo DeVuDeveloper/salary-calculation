@@ -1,27 +1,24 @@
 import React from "react"
 import RadioButton from "./RadioButton"
-import Selector from "./Selector";
-import Input from "./Input";
-import Button from "./Button";
-import Button2 from "./Button2";
-import Button3 from "./Button3";
-import { Card } from "@mui/material";
-import Logo from "../images/logo.png";
+import Selector from "./Selector"
+import Input from "./Input"
+import Button from "./Button"
+import Button2 from "./Button2"
+import Button3 from "./Button3"
+import Display from "./Display"
+import Logo from "../images/logo.png"
 
 const Calculation = () => {
   return (
     <div class="grid grid-rows-3 grid-flow-col gap-4">
-
       <div className="row-span-3 h-3/4">
-
         <div className="">
-        <Button2 />
+          <Button2 />
         </div>
 
         <div className="">
-        <Button3 />
+          <Button3 />
         </div>
-        
       </div>
 
       <div className="flex flex-row place-content-center my-auto py-5 border-b-2 border-stone-400">
@@ -31,25 +28,34 @@ const Calculation = () => {
         </h2>
       </div>
 
-    
+      <div className=" grid grid-rows-2">
         <div className="grid grid-cols-3 gap-8 px-10">
+
           <div>
             <RadioButton />
           </div>
+
           <div>
             <Input />
           </div>
+
           <div>
             <Selector />
           </div>
         </div>
 
-        <div className="m-auto">
+        <div className="mx-auto mt-20">
           <Button />
         </div>
+
       </div>
-    
+
+      <div className="mx-auto mt-20">
+          <Display />
+        </div>
+
+      </div>
   )
 }
 
-export default Calculation;
+export default Calculation

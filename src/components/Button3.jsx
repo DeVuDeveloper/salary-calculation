@@ -12,7 +12,7 @@ const Button3 = () => {
   return (
     <div class="">
  
-      <button class="text-sm mt-10 w-7 text-white font-bold py-2 border-b-2 border-blue-500 rounded" ref={ref} id="vert-btn2"></button>
+      <button class="text-sm mt-10 w-7 text-white font-bold py-2 border-b-2 border-blue-500 hover:text-blue-400 rounded" ref={ref} id="vert-btn2"></button>
           
     </div>
   )
