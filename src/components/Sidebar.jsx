@@ -15,7 +15,7 @@ const Sidebar = ({ mode, setMode }) => {
         <List>
         <ListItem disablePadding button component={NavLink} to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')} activeclassname="active" style={({ isActive }) => ({
                 paddingBottom: isActive ? '10px' : '5px',
-                borderBottom: isActive ? '2px solid #376e6f' : '',
+                borderBottom: isActive ? '2px solid #424242' : '',
               })}>
 
             <ListItemButton>
@@ -30,12 +30,12 @@ const Sidebar = ({ mode, setMode }) => {
           <ListItem disablePadding>
             <ListItemButton component={NavLink} to="salary" className={({ isActive }) => (isActive ? 'active' : 'inactive')}  activeclassname="active"  style={({ isActive }) => ({
                 paddingBottom: isActive ? '10px' : '5px',
-                borderBottom: isActive ? '2px solid #376e6f' : '',
+                borderBottom: isActive ? '2px solid #424242' : '',
               })}>
               <ListItemIcon>
                 <Calculate />
               </ListItemIcon>
-              <ListItemText primary="Salary" />
+              <ListItemText primary="Test" />
             </ListItemButton>
           </ListItem>
 
