@@ -6,11 +6,13 @@ const Inputa = () => {
 
     <div class="relative z-0  px-1 w-full group">
     <label for="salary" class="font-mono uppercase font-bold  text-[11px]  text-white
-    bg-black relative px-1  top-2 left-3 w-auto group-focus-within:text-blue-300 ">
+    bg-stone-800 relative px-1  top-2 left-3 w-auto group-focus-within:text-blue-300 ">
     Salary Income
     </label>
-    <input type="number" name="salary" id="salary" class="h-8 text-10  bg-black border py-55-rem border-gray-300 text-white text-sm rounded-lg focus:ring-blue-400 focus:border-blue-500 block w-full p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    required="" placeholder="salary income" />
+    <input type="number" name="salary" id="salary" class="h-9 text-10  bg-transparent border py-55-rem border border-stone-600
+      hover:border-white focus:outline-none text-white text-sm rounded 
+      focus:border-2 focus:border-blue-300  block w-full p-1.5 dark:bg-gray-700 dark:border-gray-400 placeholder-gray-400"
+    required="" placeholder="$" />
     </div>
   )
 }

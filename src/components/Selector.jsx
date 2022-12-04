@@ -13,11 +13,11 @@ const Selector = () => {
 
   return (
 <FormControl fullWidth>
-  <InputLabel id="demo-simple-select-label">Period</InputLabel>
+  <InputLabel id="demo-simple-select-label" style={{ marginTop: 15, fontSize: 14}}>period</InputLabel>
   <Select
     labelId="demo-simple-select-label"
     id="demo-simple-select"
-    
+    style={{ height: 37, marginTop: 23 }}
     label="Period"
     onChange={handleChange}
   >
