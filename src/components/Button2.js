@@ -11,9 +11,9 @@ const Button2 = () => {
   }, []);
   
   return (
-    <div class="w-10 p-0 m-0">
+    <div class="">
  
-      <button class="w-7 text-sm text-center  text-white font-bold pb-4 bg-blue-300 border-b-2 border-blue-500 hover:text-blue-400 rounded" ref={ref} id="vert-btn1"></button>
+      <button class="text-sm text-center w-7 text-white font-bold pb-4 bg-blue-300 border-b-2 border-blue-500 hover:text-blue-400 rounded" ref={ref} id="vert-btn1"></button>
           
     </div>
   )

@@ -10,27 +10,26 @@ import Logo from "../images/logo.png"
 
 const Calculation = () => {
   return (
-    <div class="grid  grid-flow-col">
-      <div className="row-span-2 w-10 m-0 p-0">
+    <section className="grid grid-cols-12 gap-4">
 
-        <div className="p-0 m-0 w-10">
-          <Button2 />
-        </div>
-
-        <div className="p-0 m-0 w-10">
-          <Button3 />
-        </div>
+      <div className="col-span-1">
+        <Button2 />
+        <Button3 />
       </div>
 
-      <div className="flex flex-row place-content-center py-5 h-20 border-b-2 border-stone-400">
+    <div class="grid grid-rows-2 grid-flow-col col-span-11">
+    
+
+      <div className="flex flex-row place-content-center py-5 h-20 border-b-2 border-stone-400 ">
         <img src={Logo} className="object-contain h-34 w-12 red" alt="..." />
-        <h2 className="indent-8 font-medium text-xl text-center tracking-wide text-blue-300">
+        <h2 className="font-medium text-xl text-center tracking-wide text-blue-300">
           Income tax calculator
         </h2>
       </div>
 
-      <div className=" grid grid-rows-2">
-        <div className="grid grid-cols-3 gap-8 px-10">
+     <div className=" grid grid-rows-2">
+        
+        <div className="grid grid-cols-3 gap-5">
 
           <div>
             <RadioButton />
@@ -43,6 +42,7 @@ const Calculation = () => {
           <div>
             <Selector />
           </div>
+
         </div>
 
         <div className="mx-auto mt-20">
@@ -52,8 +52,11 @@ const Calculation = () => {
       </div> 
 
      
+     
 
       </div>
+     
+      </section>
   )
 }
 

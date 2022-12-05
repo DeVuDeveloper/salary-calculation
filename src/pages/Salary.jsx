@@ -4,7 +4,7 @@ import Calculation from '../components/Calculation'
 
 const Salary = () => {
   return (
-    <Box flex={4} p={2}>
+    <Box flex={4} py={2}>
      <Calculation/>
     </Box>
   )
