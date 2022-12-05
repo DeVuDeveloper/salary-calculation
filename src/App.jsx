@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Sidebar from "./components/Sidebar"
 import Rightbar from "./components/Rightbar"
 import Home from "./pages/Home";
+import NotFound from "./pages/404";
 import Salary from "./pages/Salary";
 import './app.css';
 
@@ -25,8 +26,10 @@ function App() {
           <Router>
             <Sidebar mode={mode} setMode={setMode} />
             <Routes>
+              
               <Route path="/" element={<Home />} />
               <Route path="salary" element={<Salary />} />
+              <Route path="*" element={<NotFound />}/>
             </Routes>
           </Router>
           <Rightbar />

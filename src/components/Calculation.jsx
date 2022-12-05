@@ -27,7 +27,7 @@ const Calculation = () => {
         </h2>
       </div>
 
-     <div className=" grid grid-rows-2">
+     <div className=" grid grid-rows-2 mt-20">
         
         <div className="grid grid-cols-3 gap-5">
 
