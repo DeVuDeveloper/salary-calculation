@@ -17,17 +17,17 @@ const Calculation = () => {
         <Button3 />
       </div>
 
-    <div class="grid grid-rows-2 grid-flow-col col-span-11">
+    <div class="flex w-full flex-col col-span-11">
     
 
-      <div className="flex flex-row place-content-center py-5 h-20 border-b-2 border-stone-400 ">
-        <img src={Logo} className="object-contain h-34 w-12 red" alt="..." />
+      <div className="flex flex-row place-content-center py-5 h-20 border-b-2 border-stone-400 h-20">
+        <img src={Logo} className="object-contain h-34 w-12 red mr-5" alt="..." />
         <h2 className="font-medium text-xl text-center tracking-wide text-blue-300">
           Income tax calculator
         </h2>
       </div>
 
-     <div className=" grid grid-rows-2">
+     {/* <div className=" grid grid-rows-2">
         
         <div className="grid grid-cols-3 gap-5">
 
@@ -35,7 +35,7 @@ const Calculation = () => {
             <RadioButton />
           </div>
 
-          <div>
+          <div className="mr-10">
             <Input />
           </div>
 
@@ -49,9 +49,11 @@ const Calculation = () => {
           <Button />
         </div>
 
-      </div> 
+      </div>  */}
 
-     
+      <div className="mx-auto h-96">
+          <Display />
+        </div>
      
 
       </div>
