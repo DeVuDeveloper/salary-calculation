@@ -8,12 +8,12 @@ const Selector = () => {
   const handleChange = (event) => {}
 
   return (
-    <FormControl fullWidth>
+    <FormControl style={{minWidth: 120}}>
       <InputLabel
         id="demo-simple-select-label"
         style={{ marginTop: 15, fontSize: 14 }}
       >
-        period
+        frequency
       </InputLabel>
       <Select
         labelId="demo-simple-select-label"

@@ -1,12 +1,12 @@
 import React from "react"
 import RadioButton from "./RadioButton"
-import Selector from "./Selector"
-import Input from "./Input"
-import Button from "./Button"
-import Button2 from "./Button2"
-import Button3 from "./Button3"
-import Display from "./Display"
-import Logo from "../images/logo.png"
+import Selector from "./Selector";
+import Input from "./Input";
+import Button from "./Button";
+import Button2 from "./Button2";
+import Button3 from "./Button3";
+import Display from "./Display";
+import Logo from "../images/logo.png";
 
 const Calculation = () => {
   return (
@@ -27,7 +27,7 @@ const Calculation = () => {
         </h2>
       </div>
 
-     {/* <div className=" grid grid-rows-2">
+     <div className=" grid grid-rows-2">
         
         <div className="grid grid-cols-3 gap-5">
 
@@ -49,11 +49,8 @@ const Calculation = () => {
           <Button />
         </div>
 
-      </div>  */}
+      </div>  
 
-      <div className="mx-auto h-96">
-          <Display />
-        </div>
      
 
       </div>
