@@ -7,7 +7,6 @@ const Button2 = ({
   className,
   type,
 }) => {
-
   useEffect(() => {
     const buttonValue = 'IncomeDetails'.split('').join('<br/>');
     const el = document.querySelector('#vert-btn1');
