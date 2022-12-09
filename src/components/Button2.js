@@ -1,21 +1,37 @@
-import React, {useRef, useEffect} from 'react';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 
-const Button2 = () => {
-  const ref = useRef(null);
+const Button2 = ({ 
+  id,
+  onClick,
+  className,
+  type
+ }) => {
 
   useEffect(() => {
-    const buttonValue='IncomeDetails'.split("").join("<br/>");
-    const el = document.querySelector('#vert-btn1');
-    el.innerHTML=buttonValue.replace(/([A-Z])/g, '<br/> $1')
+    const buttonValue = "IncomeDetails".split("").join("<br/>")
+    const el = document.querySelector("#vert-btn1")
+    el.innerHTML = buttonValue.replace(/([A-Z])/g, "<br/> $1")
+  }, [])
 
-  }, []);
-  
   return (
-    <div class="">
- 
-      <button class="text-sm text-center w-7 text-white font-bold pb-4 bg-blue-300 border-b-2 border-blue-500 hover:text-blue-400 rounded" ref={ref} id="vert-btn1"></button>
-          
+    <div>
+      <button
+        id={id}
+        onClick={onClick}
+        className={className}
+        type={type}
+  
+      ></button>
     </div>
   )
 }
+
+Button2.propTypes = {
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
 export default Button2;
