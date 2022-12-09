@@ -14,14 +14,13 @@ const Button2 = ({
 
   return (
     <div>
-      <button id={id} onClick={onClick} className={className} type='button' />
+      <button id={id} onClick={onClick} className={className} type="button" />
     </div>
   );
 };
 
 Button2.propTypes = {
   id: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };
