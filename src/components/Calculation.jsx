@@ -26,12 +26,8 @@ const Calculation = ({ handleDisplay, setTax, setNet, setGross }) => {
       Calculations(setGross, setNet, setTax, amount, frequency, incomeType)
     }
 
-    calculate(parseFloat(data.amount).toFixed(2), data.frequency, data.incomeType)
+    calculate(parseFloat(data.amount).toFixed(2), data.frequency, data.incomeType);
     localStorage.setItem("data", JSON.stringify(data));
-    const store = JSON.parse(localStorage.getItem(data));
-    if (store) {
-      setData(store)
-    }
     
   }, [data])
 
