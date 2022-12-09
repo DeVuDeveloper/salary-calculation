@@ -7,7 +7,7 @@
 <a href="https://github.com/DeVuDeveloper/salary-calculation#readme"><strong>Explore the docs »</strong></a>
 <br />
 <br />
- <a href="https://github.com/VuDej/restaurant-frontend.com/">View Demo</a>
+ <a href="https://dejan-salestrakker-test.netlify.app/">View Demo</a>
 .
 <a href="https://github.com/DeVuDeveloper/salary-calculation/issues">Report Bug</a>
 ·
