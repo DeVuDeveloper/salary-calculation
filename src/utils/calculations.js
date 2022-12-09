@@ -15,7 +15,7 @@ export const Calculations = (
           weekly: amount,
           fortnightly: amount * 2,
           monthly: amount * 4.33,
-          annually: amount * 52
+          annually: amount * 52,
         });
         setNet({
           weekly: amount / 1.26,
@@ -87,7 +87,7 @@ export const Calculations = (
           annually: (amount * tax) / 100,
         });
       }
-      break
+      break;
     case 'net':
       if (frequency === 'weekly') {
         setNet({
@@ -168,5 +168,5 @@ export const Calculations = (
       }
       break;
     default:
-  };
+  }
 };

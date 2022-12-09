@@ -5,7 +5,6 @@ const Button2 = ({
   id,
   onClick,
   className,
-  type,
 }) => {
   useEffect(() => {
     const buttonValue = 'IncomeDetails'.split('').join('<br/>');
@@ -15,7 +14,7 @@ const Button2 = ({
 
   return (
     <div>
-      <button id={id} onClick={onClick} className={className} type={type} />
+      <button id={id} onClick={onClick} className={className} type='button' />
     </div>
   );
 };

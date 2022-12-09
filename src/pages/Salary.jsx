@@ -62,7 +62,6 @@ const Salary = (dataForm) => {
               setActiveTab("calculation")
             }}
             id="vert-btn1"
-            type="button"
           />
 
           <Button3

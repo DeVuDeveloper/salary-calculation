@@ -44,4 +44,4 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.js,x', '.json'],
   },
-}
+};
