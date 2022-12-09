@@ -23,13 +23,13 @@ const Display = ({ gross, net, tax }) => {
   return (
 
     <div class="flex flex-col w-full bg-neutral-900 pt-5 pb-20 px-5 mt-16">
-      <div className="flex gap-5 table-column">
-        <div class="flex flex-wrap justify-center space-x-2">
+      <div className="flex gap-5 table-mob">
+        <div class="">
           <span class="px-10 py-2 rounded text-white bg-blue-300 font-semibold text-sm flex  table-txt w-max cursor-pointer active:bg-gray-300 transition duration-300 ease">
             {netIncome}
           </span>
         </div>
-      <div className='selector-table'>
+      <div className='flex gap-5 selector-table'>
         <div class="">
           <h2 class="text-lg text-gray-400 font-medium">your net</h2>
         </div>
@@ -46,7 +46,7 @@ const Display = ({ gross, net, tax }) => {
 
       </div>
 
-      <div class="flex flex-col mt-6 overflow-x-auto overflow-y-hidden">
+      <div class="flex flex-col mt-6">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div class="shadow overflow-hidden sm:rounded-lg">

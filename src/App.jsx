@@ -1,7 +1,8 @@
-import React from "react"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Sidebar from "./components/Sidebar"
-import Rightbar from "./components/Rightbar"
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Rightbar from "./components/Rightbar";
+import Hamburger from "./components/Hamburger";
 import Home from "./pages/Home";
 import NotFound from "./pages/404";
 import Salary from "./pages/Salary";
@@ -25,6 +26,7 @@ function App() {
         <Stack direction="row" spacing={2} justifyContent="space-between">
           <Router>
             <Sidebar mode={mode} setMode={setMode} />
+            <Hamburger />
             <Routes>
               
               <Route path="/" element={<Home />} />
@@ -39,4 +41,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
