@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Input = ({
   id,
@@ -9,15 +9,14 @@ const Input = ({
   required,
   value,
   placeholder,
-  onChange,
+  onChange
 }) => {
-  
   return (
-    <div className="relative z-0  p-0 m-0 w-full group">
+    <div className='relative z-0  p-0 m-0 w-full group'>
       <label
-        htmlFor="salary"
-        className="font-mono uppercase font-bold  text-[11px]  mobile-input text-white
-    bg-neutral-900 relative px-1  top-2 left-8 w-auto group-focus-within:text-blue-300 "
+        htmlFor='salary'
+        className='font-mono uppercase font-bold  text-[11px]  mobile-input text-white
+    bg-neutral-900 relative px-1  top-2 left-8 w-auto group-focus-within:text-blue-300 '
       >
         Total income
       </label>
@@ -42,8 +41,7 @@ Input.propTypes = {
   value: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  required: PropTypes.bool.isRequired,
+  required: PropTypes.bool.isRequired
 }
 
 export default Input;
-
