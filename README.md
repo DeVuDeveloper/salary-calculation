@@ -1,4 +1,4 @@
-# Income Salary Calculation.
+# Income Salary Calculation
 
 <div id="top"></div>
 <!-- PROJECT LOGO -->
