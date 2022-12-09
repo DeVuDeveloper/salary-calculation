@@ -24,7 +24,7 @@ const Display = ({ gross, net, tax }) => {
 
     <div class="flex flex-col w-full bg-neutral-900 pt-5 pb-20 px-5 mt-16">
       <div className="flex gap-5 table-mob">
-        <div class="">
+        <div class="chip-tbl">
           <span class="px-10 py-2 rounded text-white bg-blue-300 font-semibold text-sm flex  table-txt w-max cursor-pointer active:bg-gray-300 transition duration-300 ease">
             {netIncome}
           </span>

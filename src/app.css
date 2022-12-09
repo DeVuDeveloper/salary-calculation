@@ -91,9 +91,11 @@
     margin-left: 20px;
     margin-right: 50px;
   }
-  .table-txt th {
-    font-size: 12px;
+  .table-txt {
+    font-size: 17px;
+    margin-left: 100px;
   }
+
   .table-mob {
     display: flex;
     flex-direction: column;
