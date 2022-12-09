@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
-import Selector from "./Selector";
+import Selector from "../components/common/Selector";
 import Input from "./Input";
 import RadioButton from "./RadioButton";
 import { Calculations } from "../utils/calculations";

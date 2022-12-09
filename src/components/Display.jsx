@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Selector from "./Selector";
+import Selector from "../components/common/Selector";
 
 const Display = ({ gross, net, tax }) => {
   const [income, setIncome] = useState("")

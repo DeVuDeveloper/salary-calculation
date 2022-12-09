@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import Rightbar from "./components/Rightbar";
-import Hamburger from "./components/Hamburger";
+import Sidebar from "./components/common/Sidebar";
+import Rightbar from "./components/common/Rightbar";
+import Hamburger from "./components/common/Hamburger";
 import Home from "./pages/Home";
 import NotFound from "./pages/404";
 import Salary from "./pages/Salary";
