@@ -2,6 +2,7 @@ import React from "react";
 
 const Button = () => {
   return (
+    
     <div>
       <button className="relative inline-flex items-center px-12 py-1 overflow-hidden text-lg font-medium text-slate-100 border-0 border-b-2 border-stone-600 rounded hover:text-white group hover:bg-gray-50">
         <span className="absolute left-0 block w-full h-0 transition-all bg-blue-400 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
