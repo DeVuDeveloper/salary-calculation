@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.[contenthash].js',
-    clean: true
+    clean: true,
   },
   devtool: 'source-map',
   module: {
@@ -15,33 +15,33 @@ module.exports = {
         test: /\.(js|jsx|ico)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/i,
         include: path.resolve(__dirname, 'src'),
-        use: ['style-loader', 'css-loader', 'postcss-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
         use: {
-          loader: 'url-loader?limit=100000'
-        }
-      }
-    ]
+          loader: 'url-loader?limit=100000',
+        },
+      },
+    ],
   },
   devServer: {
     historyApiFallback: true,
-    liveReload: true
+    liveReload: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'public/index.html',
-      favicon: 'public/favicon.ico'
-    })
+      favicon: 'public/favicon.ico',
+    }),
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
-  }
-}
+    extensions: ['.js', '.js,x', '.json'],
+  },
+},
