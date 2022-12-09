@@ -1,62 +1,115 @@
-import React from "react"
-import RadioButton from "./RadioButton"
+import React, { useState, useEffect } from "react";
+import Button from "./Button";
 import Selector from "./Selector";
 import Input from "./Input";
-import Button from "./Button";
-import Button2 from "./Button2";
-import Button3 from "./Button3";
-import Display from "./Display";
-import Logo from "../images/logo.png";
+import RadioButton from "./RadioButton";
+import { Calculations } from "../utils/calculations";
 
-const Calculation = () => {
-  return (
-    <section className="grid grid-cols-12 gap-4">
+const Calculation = ({ handleDisplay, setTax, setNet, setGross }) => {
+  const [data, setData] = useState({
+    amount: "",
+    frequency: "",
+    incomeType: "",
+  })
 
-      <div className="col-span-1">
-        <Button2 />
-        <Button3 />
-      </div>
+  const handleChange = (event) => {
+    setData((prev) => {
+      return {
+        ...prev,
+        [event.target.name]: event.target.value,
+      }
+    })
+  }
 
-    <div class="flex w-full flex-col col-span-11">
+  useEffect(() => {
+    const calculate = (amount, frequency, incomeType) => {
+      Calculations(setGross, setNet, setTax, amount, frequency, incomeType)
+    }
+
+    calculate(parseFloat(data.amount).toFixed(2), data.frequency, data.incomeType)
+    localStorage.setItem("data", JSON.stringify(data));
+    const store = JSON.parse(localStorage.getItem(data));
+    if (store) {
+      setData(store)
+    }
     
+  }, [data])
 
-      <div className="flex flex-row place-content-center py-5 h-20 border-b-2 border-stone-400 h-20">
-        <img src={Logo} className="object-contain h-34 w-12 red mr-5" alt="..." />
-        <h2 className="font-medium text-xl text-center tracking-wide text-blue-300">
-          Income tax calculator
-        </h2>
-      </div>
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    handleDisplay()
+  }
 
-     <div className=" grid grid-rows-2 mt-20">
-        
-        <div className="grid grid-cols-3 gap-5">
+  return (
+    <div className="grid grid-col-3">
+      <form onSubmit={handleSubmit}>
+        <div className=" grid grid-rows-3 mt-20">
+          <div className="grid grid-cols-3 gap-5 mobile-view">
+            <div className="grid grid-rows-2 p-0 m-0 ">
+              <div className="font-mono uppercase font-bold text-[11px] text-white ml-6 pt-4 m-0">
+                incomeType Type
+              </div>
+              <div className="flex -mt-4 mobile-radio">
+                <RadioButton
+                  id="gross"
+                  label="Gross"
+                  name="incomeType"
+                  type="radio"
+                  required
+                  value="gross"
+                  checked={data.incomeType === "gross"}
+                  onChange={handleChange}
+                />
+                <RadioButton
+                  id="net"
+                  label="Net"
+                  name="incomeType"
+                  type="radio"
+                  required
+                  value="net"
+                  checked={data.incomeType === "net"}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
 
-          <div>
-            <RadioButton />
+            <div className="mr-10">
+              <Input
+                className="h-9 text-10  mobile-input2 bg-transparent  py-55-rem border-0 border-b-2 border-stone-600
+                hover:border-white focus:outline-none text-white text-sm rounded 
+                focus:border-2 focus:border-blue-300   w-full p-2 dark:bg-gray-700 dark:border-gray-400 placeholder-gray-400"
+                id="amount"
+                type="number"
+                name="amount"
+                required
+                value={data.amount}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              <Selector
+                id="frequency"
+                name="frequency"
+                required
+                value={data.frequency}
+                onChange={handleChange}
+              />
+            </div>
           </div>
 
-          <div className="mr-10">
-            <Input />
+          <div className="mx-auto mt-20">
+            <Button
+              id="calculate"
+              type="submit"
+              onSubmit={handleSubmit}
+              disabled={data.amount === "" || data.incomeType === ""}
+            />
           </div>
-
-          <div>
-            <Selector />
-          </div>
-
         </div>
-
-        <div className="mx-auto mt-20">
-          <Button />
-        </div>
-
-      </div>  
-
-     
-
-      </div>
-     
-      </section>
+      </form>
+    </div>
   )
 }
 
-export default Calculation
+export default Calculation;
