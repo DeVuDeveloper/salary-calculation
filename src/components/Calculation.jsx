@@ -27,7 +27,7 @@ const Calculation = ({ handleDisplay, setTax, setNet, setGross }) => {
       Calculations(setGross, setNet, setTax, amount, frequency, incomeType)
     }
 
-    calculate(parseFloat(data.amount).toFixed(2), data.frequency, data.incomeType)
+    calculate(data.amount, data.frequency, data.incomeType)
     localStorage.setItem('data', JSON.stringify(data))
   }, [data])
 
@@ -80,6 +80,7 @@ const Calculation = ({ handleDisplay, setTax, setNet, setGross }) => {
                 required
                 value={data.amount}
                 onChange={handleChange}
+                placeholder='$'
               />
             </div>
 
