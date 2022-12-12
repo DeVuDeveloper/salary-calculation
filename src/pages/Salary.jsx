@@ -4,19 +4,19 @@ import Calculation from "../components/Calculation";
 import Display from "../components/Display";
 import Button2 from "../components/Button2";
 import Button3 from "../components/Button3";
-import Logo from "../images/logo.png";
-
-const Salary = (dataForm) => {
-  const [activeTab, setActiveTab] = useState("calculation")
+import Logo from "../images/logo.png"
+;
+const Salary = () => {
+  const items = JSON.parse(localStorage.getItem("data"));
+  console.log(items)
+  const [activeTab, setActiveTab] = useState("calculation");
 
   const handleDisplay = () => {
-    if (dataForm.amount !== "" && dataForm.incomeType !== "" && dataForm !== "") {
-      setActiveTab("display")
-    }
+    setActiveTab("display");
   }
 
   const [disable, setDisabled] = useState(true)
-  
+
   const [gross, setGross] = useState({
     weekly: 0,
     fortnightly: 0,
@@ -72,7 +72,7 @@ const Salary = (dataForm) => {
             }
             onClick={(e) => {
               e.preventDefault()
-              if (data.amount !== "" && data.incomeType !== "") {
+              if (items.amount !== 0 ) {
                 setDisabled(true)
                 setActiveTab("display")
               }
@@ -100,4 +100,4 @@ const Salary = (dataForm) => {
   )
 }
 
-export default Salary;
+export default Salary

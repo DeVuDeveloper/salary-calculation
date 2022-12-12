@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import Selector from "../components/common/Selector";
 
 const Display = ({ gross, net, tax }) => {
+  
   const [income, setIncome] = useState("")
   const handleChange = (event) => {
     const { value } = event.target
     setIncome(value)
   }
+
   const [netIncome, setNetIncome] = useState(Math.floor(net.weekly))
   useEffect(() => {
     if (income === "weekly") {
