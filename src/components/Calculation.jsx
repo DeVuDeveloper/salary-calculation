@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from "prop-types";
 import Button from './Button';
 import Selector from '../components/common/Selector';
 import Input from './Input';
@@ -74,7 +75,7 @@ const Calculation = ({ handleDisplay, setTax, setNet, setGross }) => {
                 hover:border-white focus:outline-none text-white text-sm rounded 
                 focus:border-2 focus:border-blue-300   w-full p-2 dark:bg-gray-700 dark:border-gray-400 placeholder-gray-400'
                 id='amount'
-                type='number'
+                type='string'
                 name='amount'
                 required
                 value={data.amount}
@@ -98,7 +99,6 @@ const Calculation = ({ handleDisplay, setTax, setNet, setGross }) => {
               id='calculate'
               type='submit'
               onSubmit={handleSubmit}
-              disabled={data.amount === '' || data.incomeType === ''}
             />
           </div>
         </div>
@@ -106,5 +106,13 @@ const Calculation = ({ handleDisplay, setTax, setNet, setGross }) => {
     </div>
   )
 }
+
+Calculation.propTypes = {
+  handleDisplay: PropTypes.func.isRequired,
+  setGross: PropTypes.func.isRequired,
+  setNet: PropTypes.func.isRequired,
+  setGross: PropTypes.func.isRequired,
+};
+
 
 export default Calculation;
