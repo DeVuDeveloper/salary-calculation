@@ -6,6 +6,7 @@ const Button3 = ({
    type,
    onClick,
    className,
+   disabled
    
   }) => {
 
@@ -22,7 +23,7 @@ const Button3 = ({
         type={type}
         onClick={onClick}
         className={className}
-       
+       disabled={disabled}
       ></button>
     </div>
   )
@@ -33,6 +34,7 @@ Button3.propTypes = {
   type: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired,
   
 };
 

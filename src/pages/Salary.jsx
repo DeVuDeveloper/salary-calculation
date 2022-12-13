@@ -1,21 +1,17 @@
-import React, { useState } from "react";
-import { Box } from "@mui/material";
-import Calculation from "../components/Calculation";
-import Display from "../components/Display";
-import Button2 from "../components/Button2";
-import Button3 from "../components/Button3";
+import React, { useState, useEffect } from "react"
+import { Box } from "@mui/material"
+import Calculation from "../components/Calculation"
+import Display from "../components/Display"
+import Button2 from "../components/Button2"
+import Button3 from "../components/Button3"
 import Logo from "../images/logo.png"
-;
 const Salary = () => {
-  const items = JSON.parse(localStorage.getItem("data"));
-  console.log(items)
-  const [activeTab, setActiveTab] = useState("calculation");
+  const items = JSON.parse(localStorage.getItem("data"))
+  const [activeTab, setActiveTab] = useState("calculation")
 
   const handleDisplay = () => {
-    setActiveTab("display");
+    setActiveTab("display")
   }
-
-  const [disable, setDisabled] = useState(true)
 
   const [gross, setGross] = useState({
     weekly: 0,
@@ -72,14 +68,13 @@ const Salary = () => {
             }
             onClick={(e) => {
               e.preventDefault()
-              if (items.amount !== 0 ) {
-                setDisabled(true)
+              if (items.amount !== 0) {
                 setActiveTab("display")
               }
             }}
             id="vert-btn2"
             type="button"
-            disabled={disable}
+            disabled={!net.weekly}
           />
         </div>
 
