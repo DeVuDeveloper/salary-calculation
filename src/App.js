@@ -4,9 +4,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/common/Sidebar';
 import Rightbar from './components/common/Rightbar';
 import Hamburger from './components/common/Hamburger';
+import Footer from './components/common/Footer';
 import Home from './pages/Home';
 import NotFound from './pages/404';
 import Salary from './pages/Salary';
+
+
 
 import { useState } from 'react';
 import './app.css';
@@ -27,15 +30,21 @@ function App () {
           <Router>
             <Sidebar mode={mode} setMode={setMode} />
             <Hamburger />
+            
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='salary' element={<Salary />} />
+             
               <Route path='*' element={<NotFound />} />
             </Routes>
           </Router>
           <Rightbar />
+        
         </Stack>
+        <Footer />
+        
       </Box>
+     
     </ThemeProvider>
   )
 }
