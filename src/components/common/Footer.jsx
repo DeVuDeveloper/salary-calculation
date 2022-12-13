@@ -6,7 +6,7 @@ const Footer = () => {
   return (
   
    
-    <footer className="footer bg-dark relative mt-48 pt-1  h-screen border-b-2 border-stone-700">
+    <footer className="footer bg-dark relative mt-48 pt-1  border-b-2 border-stone-700">
        
         <div className="container mx-auto px-6">
             <div className="mt-30 border-t-2 border-gray-300 flex flex-col items-center">
@@ -22,4 +22,5 @@ const Footer = () => {
 
   );
 };
+
 export default Footer;
