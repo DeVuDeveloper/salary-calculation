@@ -27,7 +27,7 @@ const Input = ({
         className={className}
         required={required}
         onChange={onChange}
-        value={value.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
+        value={value}
         placeholder={placeholder}
       />
     </div>

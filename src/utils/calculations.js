@@ -1,5 +1,9 @@
-const tax = 21;
+export const formatCurrency = new Intl.NumberFormat(undefined, {
+  style: 'currency',
+  currency: 'USD'
+});
 
+const tax = 21;
 let a = 0
 let weekNet = 0;
 let fortNightNet = 0;
