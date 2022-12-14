@@ -4,8 +4,6 @@ import Button from './Button';
 import Selector from '../components/common/Selector';
 import Input from './Input';
 import RadioButton from './RadioButton';
-import { Calculations } from '../utils/calculations';
-import { formatCurrency } from '../utils/calculations';
 
 const Calculation = ({ handleDisplay, setTax, setNet, setGross }) => {
   const [data, setData] = useState({
@@ -33,13 +31,16 @@ const Calculation = ({ handleDisplay, setTax, setNet, setGross }) => {
   useEffect(() => {
     calculate(data.amount, data.frequency, data.incomeType)
   }, [data])
-  console.log(formatCurrency.format(data.amount))
+  console.log(new Intl.NumberFormat().format(data.amount))
 
   const handleSubmit = (event) => {
     event.preventDefault()
     localStorage.setItem('data', JSON.stringify(data))
     handleDisplay()
   }
+
+  
+
 
 return (
     <div className='grid grid-col-3'>
@@ -76,14 +77,12 @@ return (
 
             <div className='mr-10'>
               <Input
-                className='h-9 text-10  mobile-input2 bg-transparent  py-55-rem border-0 border-b-2 border-stone-600
-                hover:border-white focus:outline-none text-white text-sm rounded 
-                focus:border-2 focus:border-blue-300   w-full p-2 dark:bg-gray-700 dark:border-gray-400 placeholder-gray-400'
+                
                 id='amount'
-                type='string'
+                type='number'
                 name='amount'
                 required
-                value={data.amount}
+                value={(data.amount)}
                 onChange={handleChange}
                 placeholder='$'
               />

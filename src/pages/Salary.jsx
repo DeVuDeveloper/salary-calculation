@@ -1,38 +1,15 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
-import Calculation from '../components/Calculation';
-import Display from '../components/Display';
+import { CalculateIncome, IncomeResult } from '../features'
 import Button2 from '../components/Button2';
 import Button3 from '../components/Button3';
 import Logo from '../images/logo.png';
+
 const Salary = () => {
   const items = JSON.parse(localStorage.getItem('data'))
   const [activeTab, setActiveTab] = useState('calculation')
 
-  const handleDisplay = () => {
-    setActiveTab('display')
-  }
 
-  const [gross, setGross] = useState({
-    weekly: 0,
-    fortnightly: 0,
-    monthly: 0,
-    annually: 0
-  })
-
-  const [net, setNet] = useState({
-    weekly: 0,
-    fortnightly: 0,
-    monthly: 0,
-    annually: 0
-  })
-
-  const [tax, setTax] = useState({
-    weekly: 0,
-    fortnightly: 0,
-    monthly: 0,
-    annually: 0
-  })
 
   return (
     <Box flex={4} py={2}>
@@ -74,20 +51,17 @@ const Salary = () => {
             }}
             id='vert-btn2'
             type='button'
-            disabled={!net.weekly}
+           
           />
         </div>
 
         <div className='flex w-full flex-col col-span-11'>
           {activeTab === 'calculation' ? (
-            <Calculation
-              handleDisplay={handleDisplay}
-              setGross={setGross}
-              setNet={setNet}
-              setTax={setTax}
+            <CalculateIncome
+        
             />
           ) : (
-            <Display gross={gross} net={net} tax={tax} />
+            <IncomeResult />
           )}
         </div>
       </section>

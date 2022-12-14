@@ -1,19 +1,12 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import PropTypes from "prop-types";
 
-const Selector = ({
-  id,
-  name,
-  required,
-  value,
-  onChange
-}) => {
-  
-  return (
+const Selector = forwardRef(({ children, className, ...props }, ref) => (
+
     <FormControl style={{ minWidth: 120 }}>
       <InputLabel
         id="demo-simple-select-label"
@@ -22,11 +15,8 @@ const Selector = ({
         frequency
       </InputLabel>
       <Select
-        id={id}
-        name={name}
-        required={required}
-        onChange={onChange}
-        value={value}
+       ref={ref}
+       {...props}
         labelId="demo-simple-select-label"
         style={{ height: 37, marginTop: 23 }}
         sx={{
@@ -38,21 +28,15 @@ const Selector = ({
           },
         }}
       >
-        <MenuItem value="weekly">Weekly</MenuItem>
-        <MenuItem value="fortnightly">Fortnightly</MenuItem>
-        <MenuItem value="monthly">Monthly</MenuItem>
-        <MenuItem value="annually">Annually</MenuItem>
+       {children}
       </Select>
     </FormControl>
-  )
-}
+  ))
 
-Selector.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  required: PropTypes.bool.isRequired,
-};
+  Selector.displayName = 'Select'
+  Selector.propTypes = {
+    children: PropTypes.any,
+    className: PropTypes.string,
+  };
 
 export default Selector;
