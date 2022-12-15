@@ -7,39 +7,39 @@ const Rightbar = () => {
       <Box position="fixed" width={300}>
     
         <Typography variant='h6' fontWeight={100} mt={2} mb={2}>
-          Salestrekker Interview Test
+          Calculate Your Salary
         </Typography>
         <ImageList cols={3} rowHeight={100} gap={5} sx={{mr: {md: 8, lg: 0}}}>
           <ImageListItem>
             <img
-              src="https://www.salestrekker.com/images/services/main-fbrowser.png"
+              src="https://thumbs.dreamstime.com/z/red-word-salary-electronic-calculator-isolated-d-illustration-payroll-calculation-word-display-calculator-147409539.jpg"
               alt="salestrekker"
             />
           </ImageListItem>
           <ImageListItem>
             <img
-              src="https://play-lh.googleusercontent.com/7Eria2E8kKP3RyXP-1wS-Yrtn57R3CMs2VzZj85t4r8re2S-UXGbeOERhxNh-mnsMMk"
+              src="https://img.freepik.com/free-vector/net-income-calculating-abstract-concept-illustration-salary-calculation-net-income-formula-take-home-pay-corporate-accounting-calculating-earnings-profit-estimation_335657-1238.jpg?w=2000"
               alt="salestrekker"
             />
           </ImageListItem>
           <ImageListItem>
             <img
         
-              src="https://australianfintech.com.au/wp-content/uploads/sites/7/2022/03/Partnership-digital.png"
+              src="https://newdocer.cache.wpscdn.com/photo/20190820/163c3fb4c1084f668116d4fe8800e049.jpg"
               alt="salestrekker"
             />
           </ImageListItem>
         </ImageList>
         <Typography variant='h6' fontWeight={100} mt={2}>
-          Requrements
+          Summary
         </Typography>
         <List sx={{ width: {md: '80%', lg: '100%'}, maxWidth: 300, bgcolor: 'background.paper'}}>
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar alt="salestrekker" src="https://www.helloworld.rs/public/files/_thumb/200x200/public/company/1442/2/Salestrekker.png" />
+              <Avatar alt="salestrekker" src="https://www.pngitem.com/pimgs/m/394-3942147_salary-icon-png-download-donate-icon-no-background.png" />
             </ListItemAvatar>
             <ListItemText
-              primary="Requrement 1"
+              primary=""
               secondary={
                 <React.Fragment>
                   <Typography
@@ -48,36 +48,16 @@ const Rightbar = () => {
                     variant="body2"
                     color="text.primary"
                   >
-                    Salestrekker
+                   
                   </Typography>
-                  {" — Create a minimal SPA from scratch, using specified frameworks. Using core frameworks for just essential definitions/resets should be fine, but the idea is to see if the candidate can work with UI controls, customise the styles, follow the predefined guidelines and use the defined frameworks."}
+                  {" — An awesome desktop and mobile application for counting your weekly, fortnightly, monthly and annually net salary."}
                 </React.Fragment>
               }
             />
           </ListItem>
           <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-              <Avatar alt="salestrekker" src="https://www.helloworld.rs/public/files/_thumb/200x200/public/company/1442/2/Salestrekker.png" />
-            </ListItemAvatar>
-            <ListItemText
-              primary="Requirement 2"
-              secondary={
-                <React.Fragment>
-                  <Typography
-                    sx={{ display: 'inline' }}
-                    component="span"
-                    variant="body2"
-                    color="text.primary"
-                  >
-                    Salestrekker
-                  </Typography>
-                  {' — To build an input form/calculator for checking gross and net income. Imagine you need to provide information to users about their clients income, before and after tax. One screen can be used for data entry and the second screen a table with results. You don\'t need to worry about using an exact tax % figure, you can choose how much tax goes for net income calculation.'}
-                </React.Fragment>
-              }
-            />
-          </ListItem>
-          <Divider variant="inset" component="li" />
+          
+          
         </List>
       </Box>
     </Box>
