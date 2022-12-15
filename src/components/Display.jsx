@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Selector from '../components/common/Selector';
-import { formatCurrency } from '../utils/calculations';
+
 
 const Display = ({ gross, net, tax }) => {
   const [income, setIncome] = useState('')

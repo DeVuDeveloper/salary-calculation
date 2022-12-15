@@ -1,38 +1,21 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
-import Calculation from '../components/Calculation';
-import Display from '../components/Display';
+import { CalculateIncome } from '../features'
+import { IncomeResult } from '../features/IncomeResult/index'
 import Button2 from '../components/Button2';
 import Button3 from '../components/Button3';
 import Logo from '../images/logo.png';
-const Salary = () => {
-  const items = JSON.parse(localStorage.getItem('data'))
-  const [activeTab, setActiveTab] = useState('calculation')
+import { useLocation } from 'react-router-dom';
 
+const Salary = () => {
+
+const [activeTab, setActiveTab] = useState('calculation')
   const handleDisplay = () => {
     setActiveTab('display')
   }
-
-  const [gross, setGross] = useState({
-    weekly: 0,
-    fortnightly: 0,
-    monthly: 0,
-    annually: 0
-  })
-
-  const [net, setNet] = useState({
-    weekly: 0,
-    fortnightly: 0,
-    monthly: 0,
-    annually: 0
-  })
-
-  const [tax, setTax] = useState({
-    weekly: 0,
-    fortnightly: 0,
-    monthly: 0,
-    annually: 0
-  })
+  
+const location = useLocation()
+ 
 
   return (
     <Box flex={4} py={2}>
@@ -68,26 +51,23 @@ const Salary = () => {
             }
             onClick={(e) => {
               e.preventDefault()
-              if (items.amount !== 0) {
+             
                 setActiveTab('display')
-              }
+              
             }}
             id='vert-btn2'
             type='button'
-            disabled={!net.weekly}
+            disabled={!location.state}
           />
         </div>
 
         <div className='flex w-full flex-col col-span-11'>
           {activeTab === 'calculation' ? (
-            <Calculation
-              handleDisplay={handleDisplay}
-              setGross={setGross}
-              setNet={setNet}
-              setTax={setTax}
+            <CalculateIncome
+            handleDisplay={handleDisplay}
             />
           ) : (
-            <Display gross={gross} net={net} tax={tax} />
+              <IncomeResult />
           )}
         </div>
       </section>

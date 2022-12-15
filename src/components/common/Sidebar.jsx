@@ -91,14 +91,14 @@ const Sidebar = ({ mode, setMode }) => {
               <ListItemIcon>
                 <Calculate />
               </ListItemIcon>
-              <ListItemText primary="Test" />
+              <ListItemText primary="Calculation" />
             </ListItemButton>
           </ListItem>
 
           <ListItem disablePadding>
             <ListItemButton
               component="a"
-              href="https://github.com/DeVuDeveloper/salary-calculation/pull/4"
+              href="https://github.com/DeVuDeveloper/salary-calculation"
               target="_blank"
             >
               <ListItemIcon>

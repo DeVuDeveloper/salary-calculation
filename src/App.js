@@ -8,6 +8,7 @@ import Footer from './components/common/Footer'
 import Home from './pages/Home'
 import NotFound from './pages/404'
 import Salary from './pages/Salary'
+import {  IncomeResult } from './features'
 
 import { useState } from 'react'
 import './app.css'
@@ -32,6 +33,7 @@ function App () {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='salary' element={<Salary />} />
+              <Route path='income-results' element={<IncomeResult />} />
 
               <Route path='*' element={<NotFound />} />
             </Routes>
