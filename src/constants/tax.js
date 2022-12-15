@@ -1,8 +1,8 @@
 export const FREQUENCIES = {
-    weekly: 'weekly',
-    fortnightly: 'fortnightly',
-    monthly: 'monthly',
-    annually: 'annually',
+    weekly: 'Weekly',
+    fortnightly: 'Fortnightly',
+    monthly: 'Monthly',
+    annually: 'Annually',
   }
   
   export const INCOME_TYPE = {

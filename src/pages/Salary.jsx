@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
-import { CalculateIncome, IncomeResult } from '../features'
+import { CalculateIncome } from '../features'
+import { IncomeResult } from '../features/IncomeResult/index'
 import Button2 from '../components/Button2';
 import Button3 from '../components/Button3';
 import Logo from '../images/logo.png';
+import { useLocation } from 'react-router-dom';
 
 const Salary = () => {
-  const items = JSON.parse(localStorage.getItem('data'))
-  const [activeTab, setActiveTab] = useState('calculation')
 
-
+const [activeTab, setActiveTab] = useState('calculation')
+  const handleDisplay = () => {
+    setActiveTab('display')
+  }
+  
+const location = useLocation()
+ 
 
   return (
     <Box flex={4} py={2}>
@@ -45,23 +51,23 @@ const Salary = () => {
             }
             onClick={(e) => {
               e.preventDefault()
-              if (items.amount !== 0) {
+             
                 setActiveTab('display')
-              }
+              
             }}
             id='vert-btn2'
             type='button'
-           
+            disabled={!location.state}
           />
         </div>
 
         <div className='flex w-full flex-col col-span-11'>
           {activeTab === 'calculation' ? (
             <CalculateIncome
-        
+            handleDisplay={handleDisplay}
             />
           ) : (
-            <IncomeResult />
+              <IncomeResult />
           )}
         </div>
       </section>

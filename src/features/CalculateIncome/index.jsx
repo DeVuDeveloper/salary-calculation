@@ -2,15 +2,16 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
-import {Input} from '../../components/Input';
+import Input from '../../components/Input';
+import RadioButton from '../../components/RadioButton';
 import Selector from '../../components/common/Selector';
 import MenuItem from "@mui/material/MenuItem";
 import { FREQUENCIES, INCOME_TYPE } from '../../constants/tax'
 import { formatNumber, onlyNumbers } from '../../utils/numbers';
 
-const listFrequencies = Object.values(FREQUENCIES)
+const listFrequencies = Object.values(FREQUENCIES);
 
-export const CalculateIncome = () => {
+export const CalculateIncome = ( {handleDisplay} ) => {
   const navigate = useNavigate()
   const { register, handleSubmit, watch, setValue, formState } = useForm({
     defaultValues: {
@@ -30,32 +31,61 @@ export const CalculateIncome = () => {
     setValue('income', incomeFormatted)
   }, [incomeWatch, setValue])
 
-  function submit({ income, frequency, incomeType }) {
-    navigate('/income-results', {
+  const submit = ({ income, frequency, incomeType }) => {
+    navigate('', {
       state: {
         income,
         frequency,
         incomeType,
       },
     })
+    handleDisplay()
   }
 
   return (
-    <form
-      className="p-7 flex flex-col justify-center"
-      onSubmit={handleSubmit(submit)}
-    >
-      
+    <div className='grid grid-col-3'>
+    <form onSubmit={handleSubmit(submit)}>
+    <div className=' grid grid-rows-3 mt-20'>
+          <div className='grid grid-cols-3 gap-5 mobile-view'>
+            <div className='grid grid-rows-2 p-0 m-0 '>
+              <div className='font-mono uppercase font-bold text-[11px] text-white ml-6 pt-4 m-0'>
+                income Type
+              </div>
 
-      <div className="mt-9 flex flex-col gap-6">
-        <div
-          className="grid gap-x-4"
-          style={{ gridTemplateColumns: '2fr 1fr' }}
-        >
-          <div className="relative">
-            <label>
-              <span className="text-base">What is your total income?</span>
-              <Input
+              <div className='flex -mt-4 mobile-radio'>
+              <RadioButton
+                  id='gross'
+                  label='Gross'
+                  name='incomeType'
+                  type='radio'
+                  required
+                  value='gross'
+                  {...register('incomeType', { required: true })}
+                  
+                  onChange={() => setValue('incomeType', INCOME_TYPE.grossIncome)}
+                />
+                <RadioButton
+                  id='net'
+                  label='Net'
+                  name='incomeType'
+                  type='radio'
+                  required
+                  value='net'
+                  {...register('incomeType', { required: true })}
+                  
+                  onChange={() => setValue('incomeType', INCOME_TYPE.netIncome)}
+                />
+              </div>
+              {formState.errors.incomeType?.type === 'required' && (
+            <p className="text-sm text-red-400 absolute -bottom-5">
+              Incoming type is a required field.
+            </p>
+          )}
+            </div>
+
+            <div className='mr-10'>
+         
+            <Input
                 className="mt-2 w-full"
                 {...register('income', {
                   required: true,
@@ -63,7 +93,7 @@ export const CalculateIncome = () => {
                 })}
                 inputMode="numeric"
               />
-            </label>
+           
             {formState.errors.income?.type === 'validate' && (
               <p className="text-sm text-red-400 absolute -bottom-5">
                 The income value needs to be more than 0.
@@ -71,7 +101,8 @@ export const CalculateIncome = () => {
             )}
           </div>
 
-          <Selector className="self-end capitalize" {...register('frequency')}>
+         <div>
+          <Selector {...register('frequency')}>
             {listFrequencies.map((frequency) => (
               <MenuItem key={frequency} value={frequency}>
                 {frequency}
@@ -79,46 +110,15 @@ export const CalculateIncome = () => {
             ))}
           </Selector>
         </div>
-
-        <div className="block relative">
-          <span className="text-base">Choose the income type</span>
-
-          <div className="flex flex-row gap-x-2 mt-2">
-            <input
-              className="hidden"
-              type="text"
-              name="default"
-              {...register('incomeType', { required: true })}
-            />
-            <Button
-              type="button"
-              variant={isIncomeTypeGross ? 'primary' : null}
-              onClick={() => setValue('incomeType', INCOME_TYPE.grossIncome)}
-            >
-              Gross income
-            </Button>
-
-            <Button
-              type="button"
-              variant={isIncomeTypeNet ? 'primary' : null}
-              onClick={() => setValue('incomeType', INCOME_TYPE.netIncome)}
-            >
-              Net income
-            </Button>
-          </div>
-          {formState.errors.incomeType?.type === 'required' && (
-            <p className="text-sm text-red-400 absolute -bottom-5">
-              Incoming type is a required field.
-            </p>
-          )}
         </div>
-      </div>
 
-      <div className="flex justify-center">
-        <Button className="mt-16 w-2/3" variant="primary" type="submit">
-          Calculate
-        </Button>
-      </div>
-    </form>
+          
+
+        <div className='mx-auto mt-20'>
+            <Button id='calculate' type='submit'/>
+          </div>
+        </div>
+      </form>
+    </div>
   )
 }
